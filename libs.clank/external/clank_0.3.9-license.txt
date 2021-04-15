@@ -1,8 +1,10 @@
 Name: JClank Library
-Version: 0.3.6
+Version: 0.3.9
 Description: Clang/LLVM-based CND Code Model
-License: LLVM Release License
+License: BSD-llvm
 OSR: 22570
+Origin: https://github.com/java-port/clank
+Files: clank_0.3.9.zip
 
 ==============================================================================
 LLVM Release License
@@ -74,3 +76,4 @@ OpenBSD regex       llvm/lib/Support/{reg*, COPYRIGHT.regex}
 pyyaml tests        llvm/test/YAMLParser/{*.data, LICENSE.TXT}
 ARM contributions   llvm/lib/Target/ARM/LICENSE.TXT
 md5 contributions   llvm/lib/Support/MD5.cpp llvm/include/llvm/Support/MD5.h
+
