@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.apache.netbeans.cnd</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>cnd-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>CND — Parent</name>
+
+    <!-- Build order follows dependency graph (leaf → root) -->
+    <modules>
+        <!-- Level 1: no internal deps -->
+        <module>cnd.utils</module>
+        <module>cnd.utils.ui</module>
+
+        <!-- Level 2 -->
+        <module>cnd.api.project</module>
+        <module>cnd.api.remote</module>
+        <module>cnd.api.remote.ui</module>
+        <module>cnd.lexer</module>
+        <module>cnd.source</module>
+
+        <!-- Level 3 -->
+        <module>cnd.toolchain</module>
+        <module>cnd.toolchain.ui</module>
+
+        <!-- Level 4: core -->
+        <module>cnd</module>
+        <module>cnd.editor</module>
+        <module>cnd.makeproject</module>
+        <module>cnd.makeproject.source.bridge</module>
+
+        <!-- Level 5 -->
+        <module>cnd.debugger.common2</module>
+        <module>cnd.debugger.gdb2</module>
+        <module>cnd.remote</module>
+        <module>cnd.remote.projectui</module>
+        <module>cnd.remote.ui</module>
+        <module>cnd.makeproject.ui</module>
+
+        <!-- Level 6 -->
+        <module>cnd.ui</module>
+        <module>cnd.lsp</module>
+        <module>cnd.meson</module>
+        <module>cnd.script</module>
+        <module>cnd.dwarfdump</module>
+
+        <!-- Level 7: aggregators -->
+        <module>cnd.kit</module>
+        <module>jellytools.cnd</module>
+    </modules>
+</project>
