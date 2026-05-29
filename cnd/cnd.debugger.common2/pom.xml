@@ -244,5 +244,15 @@
             <groupId>org.netbeans.modules</groupId>
             <artifactId>org-netbeans-modules-terminal-nb</artifactId>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-netbeans-modules-nbjunit</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>

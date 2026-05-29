@@ -56,7 +56,6 @@
 
         <!-- Level 7: aggregators -->
         <module>cnd.kit</module>
-        <!-- jellytools.cnd excluded: test framework module with deps not on Maven Central -->
-        <!-- <module>jellytools.cnd</module> -->
+        <module>jellytools.cnd</module>
     </modules>
 </project>
