@@ -1,0 +1,25 @@
+# Maven build output
+target/
+
+# Compiled Java classes
+*.class
+
+# Java archives
+*.jar
+*.nbm
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+.settings/
+.classpath
+.project
+
+# NetBeans IDE project metadata (Ant-based, not used in Maven build)
+nbproject/private/
+
+# Ant build output (legacy, not used in Maven build)
+build/
+dist/
