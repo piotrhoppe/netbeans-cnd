@@ -24,10 +24,15 @@
             <plugin>
                 <groupId>org.apache.netbeans.utilities</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
+                <extensions>true</extensions>
                 <configuration>
                     <cluster>dlight</cluster>
                     <moduleName>org.netbeans.modules.dlight.remote.ui</moduleName>
                     <sourceManifestFile>manifest.mf</sourceManifestFile>
+                    <publicPackages>
+                        <publicPackage>org.netbeans.modules.remote.api.ui</publicPackage>
+                        <publicPackage>org.netbeans.modules.remote.ui.spi</publicPackage>
+                    </publicPackages>
                 </configuration>
             </plugin>
         </plugins>

@@ -25,11 +25,16 @@
             <plugin>
                 <groupId>org.apache.netbeans.utilities</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
+                <!-- extensions must be in <plugins>, not only pluginManagement, to activate nbm lifecycle -->
+                <extensions>true</extensions>
                 <configuration>
                     <cluster>dlight</cluster>
                     <moduleName>org.netbeans.modules.dlight.libs.common</moduleName>
                     <!-- use existing manifest.mf at module root -->
                     <sourceManifestFile>manifest.mf</sourceManifestFile>
+                    <publicPackages>
+                        <publicPackage>org.netbeans.modules.dlight.libs.common</publicPackage>
+                    </publicPackages>
                 </configuration>
             </plugin>
         </plugins>
@@ -56,6 +61,13 @@
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-util-ui</artifactId>
+        </dependency>
+
+        <!-- Test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

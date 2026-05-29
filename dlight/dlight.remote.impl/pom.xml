@@ -24,10 +24,14 @@
             <plugin>
                 <groupId>org.apache.netbeans.utilities</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
+                <extensions>true</extensions>
                 <configuration>
                     <cluster>dlight</cluster>
                     <moduleName>org.netbeans.modules.dlight.remote.impl</moduleName>
                     <sourceManifestFile>manifest.mf</sourceManifestFile>
+                    <publicPackages>
+                        <publicPackage>org.netbeans.modules.remote.impl.fileoperations.spi</publicPackage>
+                    </publicPackages>
                 </configuration>
             </plugin>
         </plugins>
@@ -54,11 +58,11 @@
             <artifactId>org-netbeans-modules-dlight-nativeexecution</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.netbeans.modules</groupId>
+            <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-extexecution</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.netbeans.modules</groupId>
+            <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-queries</artifactId>
         </dependency>
         <dependency>
