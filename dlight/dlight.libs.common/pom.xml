@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.apache.netbeans.cnd</groupId>
+        <artifactId>dlight-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>dlight-libs-common</artifactId>
+    <packaging>nbm</packaging>
+    <name>Dlight — Common Libraries</name>
+    <description>File utilities (PathUtilities, InvalidFileObject) used by dlight and CND modules</description>
+
+    <build>
+        <!-- NB module sources live in src/, not src/main/java/ -->
+        <sourceDirectory>src</sourceDirectory>
+        <testSourceDirectory>test/unit/src</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.netbeans.utilities</groupId>
+                <artifactId>nbm-maven-plugin</artifactId>
+                <configuration>
+                    <cluster>dlight</cluster>
+                    <moduleName>org.netbeans.modules.dlight.libs.common</moduleName>
+                    <!-- use existing manifest.mf at module root -->
+                    <sourceManifestFile>manifest.mf</sourceManifestFile>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- NB Platform APIs -->
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-filesystems</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-modules</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util-lookup</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util-ui</artifactId>
+        </dependency>
+    </dependencies>
+</project>

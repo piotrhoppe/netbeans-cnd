@@ -17,11 +17,12 @@
     <name>Dlight — Parent</name>
 
     <!-- Build order: leaf modules first (no internal deps → deps) -->
+    <!-- dlight.remote.impl depends on dlight.remote.ui, so ui must come first -->
     <modules>
         <module>dlight.libs.common</module>
         <module>dlight.remote</module>
-        <module>dlight.remote.impl</module>
         <module>dlight.remote.ui</module>
+        <module>dlight.remote.impl</module>
         <module>dlight.sendto</module>
     </modules>
 </project>

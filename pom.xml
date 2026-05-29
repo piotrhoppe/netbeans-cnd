@@ -48,10 +48,18 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- NetBeans Platform BOM -->
+            <!-- NetBeans Platform cluster BOM (openide.*, org.netbeans.api.*) -->
             <dependency>
                 <groupId>org.netbeans.cluster</groupId>
                 <artifactId>platform</artifactId>
+                <version>${netbeans.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- NetBeans IDE cluster BOM (editor, extexecution, dlight.nativeexecution, …) -->
+            <dependency>
+                <groupId>org.netbeans.cluster</groupId>
+                <artifactId>ide</artifactId>
                 <version>${netbeans.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
