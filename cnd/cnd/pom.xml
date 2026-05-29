@@ -33,6 +33,12 @@
                         <publicPackage>org.netbeans.modules.cnd.api.utils</publicPackage>
                         <publicPackage>org.netbeans.modules.cnd.api.xml</publicPackage>
                     </publicPackages>
+                    <nbmResources>
+                        <nbmResource>
+                            <directory>release</directory>
+                            <targetPath>.</targetPath>
+                        </nbmResource>
+                    </nbmResources>
                 </configuration>
             </plugin>
         </plugins>
