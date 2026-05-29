@@ -734,6 +734,32 @@
                 </plugins>
             </build>
         </profile>
+        <profile>
+            <id>update-center</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.netbeans.utilities</groupId>
+                        <artifactId>nbm-maven-plugin</artifactId>
+                        <version>${nbm.maven.plugin.version}</version>
+                        <inherited>false</inherited>
+                        <executions>
+                            <execution>
+                                <id>generate-update-center</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>autoupdate</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>${project.basedir}/target/update-center</outputDirectory>
+                                    <fileName>updates.xml</fileName>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
     <!-- All NB artifacts are available on Maven Central — no extra repositories needed -->
