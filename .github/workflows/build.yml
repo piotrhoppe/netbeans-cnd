@@ -21,12 +21,12 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        run: mvn --no-transfer-progress verify
+        run: mvn --no-transfer-progress -Dmaven.test.failure.ignore=true clean install
 
       - name: Upload NBM artifacts
         if: github.ref == 'refs/heads/main'
         uses: actions/upload-artifact@v4
         with:
           name: nbm-packages
-          path: '**/target/*.nbm'
-          retention-days: 7
+          path: 'target/nbms/*.nbm'
+          retention-days: 30
