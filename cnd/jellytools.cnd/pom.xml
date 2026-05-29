@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.apache.netbeans.cnd</groupId>
+        <artifactId>cnd-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>jellytools-cnd</artifactId>
+    <packaging>nbm</packaging>
+    <name>CND — Jellytools</name>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <testSourceDirectory>test/unit/src</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.netbeans.utilities</groupId>
+                <artifactId>nbm-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <cluster>cnd</cluster>
+                    <moduleName>org.netbeans.modules.jellytools.cnd</moduleName>
+                    <sourceManifestFile>manifest.mf</sourceManifestFile>
+                    <publicPackages>
+                        <publicPackage>org.netbeans.jellytools</publicPackage>
+                        <publicPackage>org.netbeans.jellytools.actions</publicPackage>
+                        <publicPackage>org.netbeans.jellytools.nodes</publicPackage>
+                    </publicPackages>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

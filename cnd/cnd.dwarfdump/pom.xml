@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.apache.netbeans.cnd</groupId>
+        <artifactId>cnd-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>cnd-dwarfdump</artifactId>
+    <packaging>nbm</packaging>
+    <name>CND — DWARF Dump</name>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <testSourceDirectory>test/unit/src</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.netbeans.utilities</groupId>
+                <artifactId>nbm-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <cluster>cnd</cluster>
+                    <moduleName>org.netbeans.modules.cnd.dwarfdump</moduleName>
+                    <sourceManifestFile>manifest.mf</sourceManifestFile>
+                    <publicPackages>
+                        <publicPackage>org.netbeans.modules.cnd.dwarfdump</publicPackage>
+                        <publicPackage>org.netbeans.modules.cnd.dwarfdump.dwarf</publicPackage>
+                        <publicPackage>org.netbeans.modules.cnd.dwarfdump.dwarfconsts</publicPackage>
+                        <publicPackage>org.netbeans.modules.cnd.dwarfdump.elf</publicPackage>
+                        <publicPackage>org.netbeans.modules.cnd.dwarfdump.exception</publicPackage>
+                        <publicPackage>org.netbeans.modules.cnd.dwarfdump.reader</publicPackage>
+                        <publicPackage>org.netbeans.modules.cnd.dwarfdump.section</publicPackage>
+                        <publicPackage>org.netbeans.modules.cnd.dwarfdump.source</publicPackage>
+                    </publicPackages>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
