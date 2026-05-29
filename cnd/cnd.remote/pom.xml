@@ -36,6 +36,12 @@
                         <publicPackage>org.netbeans.modules.cnd.spi.remote.setup</publicPackage>
                         <publicPackage>org.netbeans.modules.cnd.spi.remote.setup.support</publicPackage>
                     </publicPackages>
+                    <nbmResources>
+                        <nbmResource>
+                            <directory>release</directory>
+                            <targetPath>.</targetPath>
+                        </nbmResource>
+                    </nbmResources>
                 </configuration>
             </plugin>
         </plugins>

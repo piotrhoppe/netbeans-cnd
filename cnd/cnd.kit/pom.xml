@@ -28,6 +28,12 @@
                     <cluster>cnd</cluster>
                     <moduleName>org.netbeans.modules.cnd.kit</moduleName>
                     <sourceManifestFile>manifest.mf</sourceManifestFile>
+                    <nbmResources>
+                        <nbmResource>
+                            <directory>release</directory>
+                            <targetPath>.</targetPath>
+                        </nbmResource>
+                    </nbmResources>
                 </configuration>
             </plugin>
         </plugins>
