@@ -40,14 +40,51 @@ Required by CND for remote compilation and debugging over SSH.
 ## Building
 
 ```bash
-mvn clean verify
+export JAVA_HOME=/path/to/jdk-17
+mvn clean install -Dmaven.test.skip=true
 ```
+
+NBM files are collected in `target/nbms/`.
+
+To generate an Update Center site (for NetBeans Plugin Manager):
+
+```bash
+mvn clean install -Pupdate-center -Dmaven.test.skip=true
+```
+
+Output: `target/update-center/netbeans_site/updates.xml`
+
+## Installation
+
+Install all NBM files to your NetBeans `cnd` cluster:
+
+```bash
+NB_HOME=~/path/to/netbeans
+for nbm in target/nbms/*.nbm; do
+  unzip -o "$nbm" "netbeans/*" -d /tmp/nbm_install
+  cp -r /tmp/nbm_install/netbeans/* "$NB_HOME/cnd/"
+  rm -rf /tmp/nbm_install
+done
+```
+
+### Patching nativeexecution (required)
+
+The `cnd.lsp` module uses the `nativeexecution` API but is not in its
+`OpenIDE-Module-Friends` list in standard NetBeans distributions.
+You must patch `nativeexecution` once per NB installation:
+
+```bash
+./scripts/patch-nativeexecution.sh ~/path/to/netbeans
+```
+
+Without this patch, running C/C++ programs will fail with
+`NoClassDefFoundError: ExecutionEnvironment`.
 
 ## Requirements
 
-- Java 11+
+- Java 17+
 - Maven 3.8+
-- Apache NetBeans Platform (fetched from Maven Central)
+- Apache NetBeans 14+ (platform dependencies fetched from Maven Central)
 
 ## License
 
