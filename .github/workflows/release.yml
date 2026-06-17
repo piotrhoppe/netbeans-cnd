@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java 11
+        uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Extract version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Set Maven version
+        run: mvn --no-transfer-progress versions:set -DnewVersion=${{ steps.version.outputs.VERSION }} -DgenerateBackupPoms=false
+
+      - name: Build with Maven
+        run: mvn --no-transfer-progress -Dmaven.test.skip=true clean install
+
+      - name: Build with Maven Collect NBMS
+        run: mvn --no-transfer-progress -Dmaven.test.skip=true -Pcollect-nbms install -pl . -N
+
+      - name: Build with Maven Update Center
+        run: mvn --no-transfer-progress -Dmaven.test.skip=true -Pupdate-center install
+
+      - name: Create release archive
+        run: |
+          cd target/nbms
+          zip ../../target/netbeans-cnd-${{ steps.version.outputs.VERSION }}-nbms.zip *.nbm
+          cd ../update-center/netbeans_site
+          zip ../../../target/netbeans-cnd-${{ steps.version.outputs.VERSION }}-update-center.zip *
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: NetBeansCND ${{ steps.version.outputs.VERSION }}
+          generate_release_notes: true
+          files: |
+            target/netbeans-cnd-${{ steps.version.outputs.VERSION }}-nbms.zip
+            target/netbeans-cnd-${{ steps.version.outputs.VERSION }}-update-center.zip
