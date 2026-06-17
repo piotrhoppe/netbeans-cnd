@@ -1,0 +1,77 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java 11
+        uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Checkout yenta dependency
+        uses: actions/checkout@v4
+        with:
+          repository: piotrhoppe/yenta
+          ref: a962a8bf57d305dd436ab1c1d8a01f47e35a9ad7
+          path: yenta
+          fetch-depth: 0
+
+      - name: Build yenta dependency
+        run: |
+            cd yenta
+            mvn -B --no-transfer-progress -DskipTests clean install
+            cd ..
+            rm -fdr yenta
+
+      - name: Compute versions
+        id: version
+        shell: bash
+        run: |
+          BASE_VERSION="${GITHUB_REF_NAME#v}"
+          FULL_VERSION="${BASE_VERSION}.${{ github.run_number }}"
+
+          echo "BASE_VERSION=$BASE_VERSION" >> "$GITHUB_OUTPUT"
+          echo "FULL_VERSION=$FULL_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Set Maven version
+        run: mvn --no-transfer-progress versions:set -DnewVersion=${{ steps.version.outputs.FULL_VERSION }} -DgenerateBackupPoms=false
+
+      - name: Build with Maven
+        run: mvn -B --no-transfer-progress -DskipTests clean install
+
+      - name: Build Collect NBMs
+        run: mvn -B --no-transfer-progress -DskipTests -Pcollect-nbms install -pl . -N
+
+      - name: Build Update Center
+        run: mvn -B --no-transfer-progress -DskipTests -Pupdate-center install
+
+      - name: Create release archive
+        run: |
+          cd target/nbms
+          zip ../../target/netbeans-cnd-${{ steps.version.outputs.FULL_VERSION }}-nbms.zip *.nbm
+          cd ../update-center/netbeans_site
+          zip ../../../target/netbeans-cnd-${{ steps.version.outputs.FULL_VERSION }}-update-center.zip *
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: NetBeansCND ${{ steps.version.outputs.FULL_VERSION }}
+          generate_release_notes: true
+          files: |
+            target/netbeans-cnd-${{ steps.version.outputs.FULL_VERSION }}-nbms.zip
+            target/netbeans-cnd-${{ steps.version.outputs.FULL_VERSION }}-update-center.zip
