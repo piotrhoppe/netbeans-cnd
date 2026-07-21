@@ -16,6 +16,7 @@
     <packaging>nbm</packaging>
     <name>Dlight — Remote Filesystem API</name>
     <description>API for remote filesystem access (RemoteFileObject, RemoteFileSystem SPI)</description>
+    <url>https://github.com/piotrhoppe/netbeans-cnd</url>
 
     <build>
         <sourceDirectory>src</sourceDirectory>

@@ -16,6 +16,7 @@
     <packaging>nbm</packaging>
     <name>Dlight — Send To Terminal</name>
     <description>Action to send selected text or files to a remote terminal over SSH</description>
+    <url>https://github.com/piotrhoppe/netbeans-cnd</url>
 
     <build>
         <sourceDirectory>src</sourceDirectory>

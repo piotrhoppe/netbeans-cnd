@@ -15,6 +15,7 @@
     <artifactId>cnd-makeproject-ui</artifactId>
     <packaging>nbm</packaging>
     <name>CND — Make Project UI</name>
+    <url>https://github.com/piotrhoppe/netbeans-cnd</url>
 
     <build>
         <sourceDirectory>src</sourceDirectory>

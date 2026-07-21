@@ -16,6 +16,7 @@
     <packaging>nbm</packaging>
     <name>Dlight — Remote Filesystem Implementation</name>
     <description>SFTP/SSH implementation of the remote filesystem API (RemoteFileObject impl)</description>
+    <url>https://github.com/piotrhoppe/netbeans-cnd</url>
 
     <build>
         <sourceDirectory>src</sourceDirectory>

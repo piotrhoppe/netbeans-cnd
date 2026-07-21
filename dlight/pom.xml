@@ -15,6 +15,7 @@
     <artifactId>dlight-parent</artifactId>
     <packaging>pom</packaging>
     <name>Dlight — Parent</name>
+    <url>https://github.com/piotrhoppe/netbeans-cnd</url>
 
     <!-- Build order: leaf modules first (no internal deps → deps) -->
     <!-- dlight.remote.impl depends on dlight.remote.ui, so ui must come first -->

@@ -15,6 +15,7 @@
     <artifactId>cnd-meson</artifactId>
     <packaging>nbm</packaging>
     <name>CND — Meson</name>
+    <url>https://github.com/piotrhoppe/netbeans-cnd</url>
 
     <build>
         <sourceDirectory>src</sourceDirectory>

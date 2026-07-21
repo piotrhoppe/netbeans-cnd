@@ -15,6 +15,7 @@
     <artifactId>cnd-api-remote-ui</artifactId>
     <packaging>nbm</packaging>
     <name>CND — Remote UI API</name>
+    <url>https://github.com/piotrhoppe/netbeans-cnd</url>
 
     <build>
         <sourceDirectory>src</sourceDirectory>

@@ -15,6 +15,7 @@
     <artifactId>cnd-parent</artifactId>
     <packaging>pom</packaging>
     <name>CND — Parent</name>
+    <url>https://github.com/piotrhoppe/netbeans-cnd</url>
 
     <!-- Build order follows dependency graph (leaf → root) -->
     <modules>

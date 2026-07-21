@@ -16,6 +16,7 @@
     <packaging>nbm</packaging>
     <name>Dlight — Common Libraries</name>
     <description>File utilities (PathUtilities, InvalidFileObject) used by dlight and CND modules</description>
+    <url>https://github.com/piotrhoppe/netbeans-cnd</url>
 
     <build>
         <!-- NB module sources live in src/, not src/main/java/ -->
