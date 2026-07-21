@@ -12,7 +12,7 @@
 
     <name>NetBeans C/C++ Plugin — Parent POM</name>
     <description>C/C++ language support for Apache NetBeans IDE</description>
-    <url>https://github.com/apache/netbeans-cnd</url>
+    <url>https://github.com/piotrhoppe/netbeans-cnd</url>
 
     <licenses>
         <license>
@@ -23,9 +23,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:https://github.com/apache/netbeans-cnd.git</connection>
-        <developerConnection>scm:git:https://github.com/apache/netbeans-cnd.git</developerConnection>
-        <url>https://github.com/apache/netbeans-cnd</url>
+        <connection>scm:git:https://github.com/piotrhoppe/netbeans-cnd.git</connection>
+        <developerConnection>scm:git:https://github.com/piotrhoppe/netbeans-cnd.git</developerConnection>
+        <url>https://github.com/piotrhoppe/netbeans-cnd</url>
     </scm>
 
     <properties>
