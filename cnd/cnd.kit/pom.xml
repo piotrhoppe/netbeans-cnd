@@ -57,5 +57,9 @@
             <groupId>org.apache.netbeans.cnd</groupId>
             <artifactId>cnd-makeproject-ui</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.netbeans.cnd</groupId>
+            <artifactId>cnd-discovery</artifactId>
+        </dependency>
     </dependencies>
 </project>

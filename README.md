@@ -9,7 +9,7 @@ monorepo, repackaged as a standalone Maven project using `nbm-maven-plugin`.
 
 ## Modules
 
-### `cnd/` — C/C++ Language Support (26 modules)
+### `cnd/` — C/C++ Language Support (27 modules)
 
 | Module | Description |
 |---|---|
@@ -23,6 +23,7 @@ monorepo, repackaged as a standalone Maven project using `nbm-maven-plugin`.
 | `cnd.debugger.gdb2` | GDB debugger integration |
 | `cnd.lsp` | Language Server Protocol integration |
 | `cnd.meson` | Meson build system support |
+| `cnd.discovery` | Project creation from existing sources (see [module README](cnd/cnd.discovery/README.md)) |
 | ... | (see `cnd/pom.xml` for full list) |
 
 ### `dlight/` — Remote Execution Infrastructure (5 modules)

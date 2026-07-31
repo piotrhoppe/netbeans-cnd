@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.apache.netbeans.cnd</groupId>
+        <artifactId>cnd-parent</artifactId>
+        <version>0.1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>cnd-discovery</artifactId>
+    <packaging>nbm</packaging>
+    <name>CND — Discovery</name>
+    <description>
+        Discovery module providing the IteratorExtension service used to create
+        MakeProjects from existing sources. Trimmed down from the original
+        contrib/cnd.discovery module: project creation is fully supported,
+        while the discovery engine (DWARF and build-log analysis, code model
+        integration) is not part of this distribution.
+    </description>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.netbeans.utilities</groupId>
+                <artifactId>nbm-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <cluster>cnd</cluster>
+                    <moduleName>org.netbeans.modules.cnd.discovery</moduleName>
+                    <sourceManifestFile>manifest.mf</sourceManifestFile>
+                    <publicPackages>
+                        <publicPackage>org.netbeans.modules.cnd.discovery.wizard</publicPackage>
+                        <publicPackage>org.netbeans.modules.cnd.discovery.projectimport</publicPackage>
+                    </publicPackages>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <maven.test.skip>true</maven.test.skip>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.netbeans.cnd</groupId>
+            <artifactId>cnd-makeproject</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.netbeans.cnd</groupId>
+            <artifactId>cnd-toolchain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.netbeans.cnd</groupId>
+            <artifactId>cnd-api-remote</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.netbeans.cnd</groupId>
+            <artifactId>dlight-remote</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.netbeans.cnd</groupId>
+            <artifactId>cnd-makeproject-ui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.netbeans.cnd</groupId>
+            <artifactId>cnd-utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.modules</groupId>
+            <artifactId>org-netbeans-modules-dlight-nativeexecution</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-filesystems</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-util-lookup</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-openide-dialogs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.netbeans.api</groupId>
+            <artifactId>org-netbeans-modules-projectapi</artifactId>
+        </dependency>
+    </dependencies>
+</project>

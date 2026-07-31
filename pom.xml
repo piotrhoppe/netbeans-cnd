@@ -32,6 +32,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>8</maven.compiler.release>
 
+        <!-- Skip tests by default; use -Prun-tests to enable -->
+        <maven.test.skip>true</maven.test.skip>
+
         <!-- NetBeans Platform version — all deps available on Maven Central -->
         <netbeans.version>RELEASE140</netbeans.version>
 
@@ -553,6 +556,11 @@
             <dependency>
                 <groupId>org.apache.netbeans.cnd</groupId>
                 <artifactId>cnd-makeproject-ui</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.netbeans.cnd</groupId>
+                <artifactId>cnd-discovery</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

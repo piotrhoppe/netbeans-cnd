@@ -47,6 +47,7 @@
         <module>cnd.remote.projectui</module>
         <module>cnd.remote.ui</module>
         <module>cnd.makeproject.ui</module>
+        <module>cnd.discovery</module>
 
         <!-- Level 6 -->
         <module>cnd.ui</module>
