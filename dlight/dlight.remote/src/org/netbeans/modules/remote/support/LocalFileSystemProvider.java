@@ -54,7 +54,6 @@ import org.netbeans.api.queries.FileEncodingQuery;
 import org.netbeans.modules.dlight.libs.common.DLightLibsCommonLogger;
 import org.netbeans.modules.nativeexecution.api.ExecutionEnvironment;
 import org.netbeans.modules.nativeexecution.api.ExecutionEnvironmentFactory;import org.netbeans.modules.remote.api.RemoteFile;
-;
 import org.netbeans.modules.remote.spi.FileSystemProvider;
 import org.netbeans.modules.remote.spi.FileSystemProvider.FileSystemProblemListener;
 import org.netbeans.modules.remote.spi.FileSystemProvider.WarmupMode;

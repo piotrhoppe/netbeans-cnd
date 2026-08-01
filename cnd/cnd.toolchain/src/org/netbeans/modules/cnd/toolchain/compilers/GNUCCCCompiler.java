@@ -28,7 +28,7 @@ import org.netbeans.modules.cnd.api.toolchain.ToolchainManager.CompilerDescripto
 import org.netbeans.modules.cnd.dwarfdump.source.Driver;
 import org.netbeans.modules.cnd.spi.utils.CndNotifier;
 import org.netbeans.modules.nativeexecution.api.ExecutionEnvironment;
-import org.netbeans.modules.nativeexecution.api.util.WindowsSupport;;
+import org.netbeans.modules.nativeexecution.api.util.WindowsSupport;
 import org.openide.ErrorManager;
 import org.openide.util.NbBundle;
 import org.openide.util.Utilities;

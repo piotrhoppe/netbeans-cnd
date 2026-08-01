@@ -63,6 +63,8 @@ public class LaunchersProjectMetadataFactory implements ProjectMetadataFactory {
     }
 
     @Messages({
+        "# {0} - path to the file",
+        "# {1} - detailed error message",
         "illegal.string=Illegal string in the file {0}.\n{1}"
     })
     private static void reload(FileObject projectDir) {
