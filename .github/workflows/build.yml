@@ -20,8 +20,21 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      - name: Checkout yenta dependency
+        uses: actions/checkout@v4
+        with:
+          repository: piotrhoppe/yenta
+          ref: a962a8bf57d305dd436ab1c1d8a01f47e35a9ad7
+          path: yenta
+          fetch-depth: 0
+
+      - name: Build yenta dependency
+        run: |
+            cd yenta
+            mvn -B --no-transfer-progress -DskipTests clean install
+
       - name: Build with Maven
-        run: mvn --no-transfer-progress -Dmaven.test.failure.ignore=true clean install
+        run: mvn -B --no-transfer-progress -DskipTests clean install
 
       - name: Upload NBM artifacts
         if: github.ref == 'refs/heads/main'

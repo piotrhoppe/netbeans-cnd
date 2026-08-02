@@ -31,7 +31,7 @@
                     <sourceManifestFile>manifest.mf</sourceManifestFile>
                 </configuration>
             </plugin>
-            <plugin>
+<!--            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>3.1.1</version>
@@ -56,7 +56,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 
@@ -153,9 +153,14 @@
         </dependency>
         <dependency>
             <groupId>org.netbeans.contrib.yenta</groupId>
+            <artifactId>lib</artifactId>
+            <version>1.2-SNAPSHOT</version>
+        </dependency>
+<!--        <dependency>
+            <groupId>org.netbeans.contrib.yenta</groupId>
             <artifactId>api</artifactId>
             <version>1.1</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency>-->
     </dependencies>
 </project>
